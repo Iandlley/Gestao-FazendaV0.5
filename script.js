@@ -1,5 +1,12 @@
 "use strict";
 
+import {getCurrentDate, dateFormat, diffDates, sumDate, dateHandling, addSlashToDate} from "./dateFunctions.js";
+
+
+
+
+console.log(diffDates("24/08/2022", "24/08/2023", 'years'))
+
 class Cow {
 
     constructor(name = "", age = "", calvingDate = "", endLactationDate = "", inseminationDate = "", milkMeasure = "", cattleFeed = "", silageFeed = "", gestationTime = "", calvingPrognostic = ""){
@@ -20,66 +27,8 @@ const processData = document.querySelector(".btn-data");
 let cowsMap = new Map();
 let nameArray = [];
 
-
-let currentDate = function(){
-    let currentDate = new Date();
-    let yearDate = currentDate.getFullYear();
-    let monthDate = currentDate.getMonth();
-    let dayDate = currentDate.getDate();
-    
-    return `${yearDate}/${monthDate}/${dayDate}`; 
-}
-
-function dateFormat(string) {
-    const dates = string.split("/");
-    const finalDate = `${dates[2]}/${dates[1]}/${dates[0]}`
-    return finalDate;
-}
-
-function diffDates(date1, date2) {
-    let formatedDate1 = dateFormat(date1);
-    let formatedDate2 = dateFormat(date2);
-    let toDataType1 = new Date(formatedDate1);
-    let toDataType2 = new Date(formatedDate2); 
-}
-
-function sumDate(date, years = 0, months = 0, days = 0) {
-    let sumDate = date.setFullYear(date.getFullYear() + years)
-    sumDate = date.setMonth(date.getMonth() + months);
-    sumDate = date.setDate(date.getDate() + days); 
-    return sumDate;
-}
-
-function dateHandling(date, months){
-    let formatedData = dateFormat(date);
-    let toDataType = new Date(formatedData);
-    
-    sumDate(toDataType, 0, months+1);
-        
-    let formatedData1 = `
-    ${toDataType.getDate() > 9 ? toDataType.getDate() : "0" + toDataType.getDate()}/${toDataType.getMonth() > 9 ? toDataType.getMonth() : "0" + toDataType.getMonth()}/${toDataType.getFullYear()}`;
-
-    return formatedData1;
-}
-
-function addSlashToDate() {
-    if (document.querySelector(".data-parto").value.length == 2) {
-        document.querySelector(".data-parto").value += "/";
-    }
-    if (document.querySelector(".data-parto").value.length == 5) {
-        document.querySelector(".data-parto").value += "/";
-    }
-
-    if (document.querySelector(".data-inseminacao").value.length == 2) {
-        document.querySelector(".data-inseminacao").value += "/";
-    }
-    if (document.querySelector(".data-inseminacao").value.length == 5) {
-        document.querySelector(".data-inseminacao").value += "/";
-    }
-}
-
 document.querySelector(".data-parto").addEventListener("keydown", (e)=> {
-    if(e.key != "Backspace") {
+    if(e.key !== "Backspace") {
         addSlashToDate()
     }
 })
@@ -100,19 +49,45 @@ processData.addEventListener("click", function(event) {
     let cowName = document.querySelector(".nome-vaca").value.toUpperCase();
        document.querySelector(".cow-name").innerHTML = cowName;
 
-    let age = document.querySelector(".age").value.toUpperCase();
+    let age = document.querySelector(".age").value;
         document.querySelector(".cow-age").innerHTML = age;
 
     let inseminationDate = document.querySelector(".data-inseminacao").value;  
         document.querySelector(".calving-prognostic").innerHTML = dateHandling(inseminationDate, 9);
         
     let calvingDate = document.querySelector(".data-parto").value;
-        document.querySelector(".end-lactation").innerHTML = dateHandling(calvingDate, 8);
+        document.querySelector(".end-lactation").innerHTML = dateHandling(calvingDate, 9);
     
     let milkMeasure = document.querySelector(".medicao-leite").value;
         document.querySelector(".cattle-feed").innerHTML = milkMeasure >     4 ? (milkMeasure / 3).toFixed(2) + "Kg" : "0Kg";
         document.querySelector(".cattle-silage").innerHTML = milkMeasure >     5 ? "25kg" : "15kg";  
+
+    document.querySelector(".permanency").innerHTML = age > 12 ? "Descarte" : "Mantenha"; 
+    
+    let currentDate = getCurrentDate();
+    console.log(currentDate, "current");
+    let  calvingPrognostic = dateHandling(inseminationDate, 9)
+    console.log(calvingPrognostic, "parto");
+
+    console.log(diffDates(currentDate, calvingPrognostic, "months"), "dog");
+
+    if (diffDates(currentDate, calvingPrognostic, "months") <= 2){
+        document.querySelector(".situation").innerHTML = "Seca";
+    } else {
+        document.querySelector(".situation").innerHTML = "Lactação";  
+    }
+    
+    
+   
+
+
+    
+
+;    
 })
+
+
+console.log(diffDates("24/08/2022", "24/09/2022" , "months"))
 
  // let currentCow = new Cow(nameCow);
 
