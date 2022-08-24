@@ -2,11 +2,6 @@
 
 import {getCurrentDate, dateFormat, diffDates, sumDate, dateHandling, addSlashToDate} from "./dateFunctions.js";
 
-
-
-
-console.log(diffDates("24/08/2022", "24/08/2023", 'years'))
-
 class Cow {
 
     constructor(name = "", age = "", calvingDate = "", endLactationDate = "", inseminationDate = "", milkMeasure = "", cattleFeed = "", silageFeed = "", gestationTime = "", calvingPrognostic = ""){
@@ -24,8 +19,37 @@ class Cow {
 }
 
 const processData = document.querySelector(".btn-data");
-let cowsMap = new Map();
-let nameArray = [];
+const btnSaveData = document.querySelector(".save-database");
+
+
+let array = [0, 1, 2, 3];
+
+let jsonString = JSON.stringify(array);
+let jsonParse = JSON.parse(jsonString);
+jsonParse.push(2, 3, 4);
+
+
+console.log(jsonString);
+console.log(jsonParse);
+
+// localStorage.setItem();
+
+// testes com local storage
+
+btnSaveData.addEventListener("click", function() {
+
+    if (!localStorage.array) {
+        localStorage.setItem("array", JSON.stringify(array));
+    }
+
+    let tempArray = JSON.parse(localStorage.getItem("array"));
+    tempArray.push(112);
+    localStorage.setItem("array",  JSON.stringify(tempArray));
+})
+
+// let copiaArray = (localStorage.getItem("array"));
+// console.log(copiaArray[0]);
+
 
 document.querySelector(".data-parto").addEventListener("keydown", (e)=> {
     if(e.key !== "Backspace") {
@@ -65,29 +89,16 @@ processData.addEventListener("click", function(event) {
     document.querySelector(".permanency").innerHTML = age > 12 ? "Descarte" : "Mantenha"; 
     
     let currentDate = getCurrentDate();
-    console.log(currentDate, "current");
     let  calvingPrognostic = dateHandling(inseminationDate, 9)
-    console.log(calvingPrognostic, "parto");
-
-    console.log(diffDates(currentDate, calvingPrognostic, "months"), "dog");
 
     if (diffDates(currentDate, calvingPrognostic, "months") <= 2){
         document.querySelector(".situation").innerHTML = "Seca";
     } else {
         document.querySelector(".situation").innerHTML = "Lactação";  
-    }
-    
-    
-   
-
-
-    
-
-;    
+    }   
 })
 
 
-console.log(diffDates("24/08/2022", "24/09/2022" , "months"))
 
  // let currentCow = new Cow(nameCow);
 

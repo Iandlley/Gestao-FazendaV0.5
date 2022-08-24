@@ -22,7 +22,6 @@ function diffDates(date1, date2, format = "") {
     let toDataType2 = new Date(formatedDate2); 
 
     let diff =  toDataType2.getTime() - toDataType1.getTime();
-    console.log(((diff / 60000) / 60) / 24);
 
     if (format == "days") {
         diff = ((diff / 60000) / 60) / 24;
