@@ -51,17 +51,23 @@ function dateHandling(date, months){
     let toDataType = new Date(formatedData);
     
     sumDate(toDataType, 0, months+1);
+
+    if (toDataType.getMonth() == 0) {
+        toDataType.setMonth(1);
+    }
         
     let formatedData1 = `
-    ${toDataType.getDate() > 9 ? toDataType.getDate() : "0" + toDataType.getDate()}/${toDataType.getMonth() > 9 ? toDataType.getMonth() : "0" + toDataType.getMonth()}/${toDataType.getFullYear()}`;
+    ${toDataType.getDate() > 9 ? toDataType.getDate() : "0" + toDataType.getDate()}/${(toDataType.getMonth() > 9 ? toDataType.getMonth() : "0" + toDataType.getMonth())}/${toDataType.getFullYear()}`;
 
     return formatedData1;
 }
 
 function addSlashToDate() {
+
     if (document.querySelector(".data-parto").value.length == 2) {
         document.querySelector(".data-parto").value += "/";
     }
+    
     if (document.querySelector(".data-parto").value.length == 5) {
         document.querySelector(".data-parto").value += "/";
     }
