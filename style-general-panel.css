@@ -9,10 +9,24 @@ body {
 header {
     background: radial-gradient(circle, rgba(42, 155, 51, 0.579) 50%, rgba(9,9,121,0.01) 100%);
     color: white;
-    margin-bottom: 30px;
     font-size: 60px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav button {
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: bold;
+    height: 30px;
+    margin: 10px 0px 20px 0px;
 }
 
 section {
@@ -22,7 +36,6 @@ section {
     align-items: center;
     gap: 10px;
     justify-content: center;
-
 }
 
 section div {
@@ -31,7 +44,7 @@ section div {
   border-radius: 10px;
   font-size: 19px;
   padding: 5px;
-  width:23%;
+  width:30%;
   height: 15%;
 }
 
@@ -50,7 +63,7 @@ section div p em {
     padding: 0px 5px 0px 5px;
 }
 
-button {
+section button {
     background: rgb(255, 255, 255);
     border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
@@ -59,7 +72,7 @@ button {
     height: 30px;
 }
 
-button:hover {
+ button:hover {
     background: black;
     color: white;
 }
