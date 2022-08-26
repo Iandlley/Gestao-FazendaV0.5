@@ -22,19 +22,21 @@ header {
 
 .nav button {
     background: rgb(255, 255, 255);
-    border: 3px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
     font-weight: bold;
     height: 30px;
     margin: 10px 0px 20px 0px;
+    text-transform: uppercase;;
+
 }
 
 section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 3px;
     justify-content: center;
 }
 
@@ -42,23 +44,31 @@ section div {
   background: rgba(255, 255, 255, 0.689);
   border: 3px solid rgb(0, 0, 0);
   border-radius: 10px;
-  font-size: 19px;
-  padding: 5px;
-  width:30%;
-  height: 15%;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1px;
+  width:100%;
+  height: 70px;
 }
 
 section h2 {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
     text-align: center;
     text-transform: uppercase;
 }
 
-section div p em {
-    background: black;
+section div p {
+    display: inline-block;
+    background:rgb(0, 0, 0);
+    border: 2px solid black;
     color: white;
+}
+
+section div p em {
+    background: rgb(0, 0, 0);
+    color: rgb(234, 255, 0);
     font-weight: bold;
     padding: 0px 5px 0px 5px;
 }
@@ -68,8 +78,8 @@ section button {
     border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
     font-weight: bold;
-    margin-top: 10px;
-    height: 30px;
+    margin-top: 5px;
+    height: 25px;
 }
 
  button:hover {
