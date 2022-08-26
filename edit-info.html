@@ -7,6 +7,8 @@
     <title>GF - Editar informações</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style-edit.css">
+    <link rel="icon" href="cow-icon.png">
+
 </head>
 <body>
     <header>
@@ -27,25 +29,38 @@
                 <p>Teto TD:</p>
                 <p>Teto TE:</p>
                 <p>Doenças:</p>
+                <button>Próximo animal</button>
+                <button>Ir para painel geral</button>
             </div>
 
             <div>
                 <h2>Editar informações</h2>
-                <p>Alterar ID do animal:</p>
-                <p>Nome:</p>
-                <p>Idade:<p>
-                <p>Data de inseminação:</p>    
-                <p>Medição de leite:</p>
-                <p>Teto FD:</p>
-                <p>Teto FE:</p>
-                <p>Teto TD:</p>
-                <p>Teto TE:</p>
-                <p>Doenças:</p>
+                <p>Está no rebanho: 
+                    <select>
+						<option>Sim</option>
+						<option>Não</option>
+					</select>
+                </p>
+                <p>Nome: <input class="edit-name"></p>
+                <p>Idade: <input class="edit-age"><p>
+                <p>Data de inseminação: <input class="edit-insemination-date"></p>    
+                <p>Medição de leite: <input class="edit-milk-measure"></p>
+                <p>Teto FD: <input class="edit-teat-FD"></p>
+                <p>Teto FE: <input class="edit-teat-FE"></p>
+                <p>Teto TD: <input class="edit-teat-TD"></p>
+                <p>Teto TE: <input class="edit-teat-TE"></p>
+                <p>Doenças: <input class="eddit-diseases"></p>
+                
+                <button>Limpar campos</button>
+                <button class="btn-save">Salvar alterações</button>
+                <button>Ir para home</button>
             </div>
-
         </section>
-
     </main>
+
+    <footer>
+        <p>&copy;IRS</p>
+    </footer>
 
 </body>
 </html>

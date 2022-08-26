@@ -39,8 +39,10 @@ section div h2{
 }
 
 section div p{
-    font-size: 30px;
-    line-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    line-height: 35px;
     text-align: left;
     text-transform: uppercase;
     margin-left: 20px;
@@ -49,4 +51,35 @@ section div p{
 .id-cow {
     width: 40px;
     height: 20px;
+}
+
+button {
+    background: rgb(45, 134, 54);
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: white;
+    border: 2px solid rgb(45, 134, 54);
+    color:rgb(45, 134, 54);
+}
+
+button:active {
+    background: rgb(45, 134, 54);
+    border: 2px solid white;
+    color: white;
+}
+
+footer {   
+    background: radial-gradient(circle, rgba(42, 155, 51, 0.579) 50%, rgba(9,9,121,0.01) 100%);
+    color: white;
+    font-size: 20px;
+    margin-top: 46px;
+    text-align: center;
 }

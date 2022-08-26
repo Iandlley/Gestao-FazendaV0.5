@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("496797.jpg");
+}
+
+header {
+    background: radial-gradient(circle, rgba(42, 155, 51, 0.579) 50%, rgba(9,9,121,0.01) 100%);
+    color: white;
+    margin-bottom: 30px;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+}

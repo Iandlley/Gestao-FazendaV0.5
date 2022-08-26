@@ -3,8 +3,9 @@
 export {Cow}
 
 class Cow {
-    constructor(id = "", name = "", age = "", calvingDate = "", inseminationDate = "", milkMeasure = "", calvingPrognostic = "", teatFR = "", teatFL = "", teatBR = "", teatBL = "", diseases = ""){
+    constructor(id = "", isActive = "", name = "", age = "", calvingDate = "", inseminationDate = "", milkMeasure = "", calvingPrognostic = "", teatFR = "", teatFL = "", teatBR = "", teatBL = "", diseases = ""){
         this.id = id;
+        this.isActive = isActive;
         this.name = name;
         this.age = age;
         this.calvingDate = calvingDate;
