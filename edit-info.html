@@ -21,16 +21,16 @@
                 <h2>Informações armazenadas</h2>
                 <p>Selecionar animal por ID: <input class="id-cow" type="text"></p>
                 <p>Nome:</p>
-                <p>Idade:<p>
+                <p>Idade:</p>
                 <p>Data de inseminação:</p>    
                 <p>Medição de leite:</p>
                 <p>Teto FD:</p>
                 <p>Teto FE:</p>
                 <p>Teto TD:</p>
                 <p>Teto TE:</p>
-                <p>Doenças:</p>
+                <p class="last-of">Doenças:</p>
                 <button>Próximo animal</button>
-                <button>Ir para painel geral</button>
+                <a href="index.html"><button>Ir para home</button></a>
             </div>
 
             <div>
@@ -42,18 +42,34 @@
 					</select>
                 </p>
                 <p>Nome: <input class="edit-name"></p>
-                <p>Idade: <input class="edit-age"><p>
+                <p>Idade: <input class="edit-age"></p>
                 <p>Data de inseminação: <input class="edit-insemination-date"></p>    
                 <p>Medição de leite: <input class="edit-milk-measure"></p>
-                <p>Teto FD: <input class="edit-teat-FD"></p>
-                <p>Teto FE: <input class="edit-teat-FE"></p>
-                <p>Teto TD: <input class="edit-teat-TD"></p>
-                <p>Teto TE: <input class="edit-teat-TE"></p>
-                <p>Doenças: <input class="eddit-diseases"></p>
                 
-                <button>Limpar campos</button>
+                <p>Teto FD: <input placeholder="DOENÇA" class="edit-teat-FD"> <input placeholder="REMÉDIO UTILIZADO"></p>
+                
+                <p>Teto FE: 
+                    <input class="edit-teat-FE" placeholder="DOENÇA"> 
+                    <input placeholder="REMÉDIO UTILIZADO">
+                </p>
+            
+                <p>Teto TD: 
+                    <input class="edit-teat-TD" placeholder="DOENÇA"> 
+                    <input placeholder="REMÉDIO UTILIZADO">
+                </p>
+
+                <p>Teto TE: 
+                    <input class="edit-teat-TE" placeholder="DOENÇA"> 
+                    <input placeholder="REMÉDIO UTILIZADO">
+                </p>
+                <p class="last-of">Doenças: 
+                    <input class="eddit-diseases" placeholder="DOENÇA">
+                    <input placeholder="REMÉDIO UTILIZADO">
+                </p>
+                
+        
                 <button class="btn-save">Salvar alterações</button>
-                <button>Ir para home</button>
+                <a href="general-panel.html"><button >Ir para painel geral</button></a>
             </div>
         </section>
     </main>

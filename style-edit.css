@@ -23,13 +23,12 @@ section {
 }
 
 section div {
-    background: rgba(19, 106, 28, 0.518);
+    background:rgba(255, 255, 255, 0.689);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
-    color: white;
     text-align: center;
     width: 40%;
-    height: 500px;
+    height: 520px;
 }
 
 section div h2{
@@ -41,11 +40,17 @@ section div h2{
 section div p{
     display: flex;
     align-items: center;
+    border-bottom: 1px solid black;
     font-size: 25px;
-    line-height: 35px;
+    line-height: 32px;
     text-align: left;
     text-transform: uppercase;
     margin-left: 20px;
+    margin-right: 20px;
+}
+
+input {
+    text-align: center;
 }
 
 .id-cow {
@@ -53,33 +58,34 @@ section div p{
     height: 20px;
 }
 
+.last-of {
+    margin-bottom: 20px;
+}
+
 button {
-    background: rgb(45, 134, 54);
-    border: 2px solid white;
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
-    color: white;
     font-weight: bold;
-    margin-top: 10px;
-    padding: 10px;
-    text-transform: uppercase;
+    margin-bottom: 10px;
+    width: 80%;  
+    height: 25px;
 }
 
 button:hover {
-    background: white;
-    border: 2px solid rgb(45, 134, 54);
-    color:rgb(45, 134, 54);
+    background: rgb(0, 0, 0);
+    color:white;
 }
 
 button:active {
-    background: rgb(45, 134, 54);
-    border: 2px solid white;
-    color: white;
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
 }
 
 footer {   
     background: radial-gradient(circle, rgba(42, 155, 51, 0.579) 50%, rgba(9,9,121,0.01) 100%);
     color: white;
     font-size: 20px;
-    margin-top: 46px;
+    margin-top: 10px;
     text-align: center;
 }
