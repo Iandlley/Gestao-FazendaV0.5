@@ -73,6 +73,10 @@ section div p em {
     padding: 0px 5px 0px 5px;
 }
 
+.attention-div {
+    display: none;
+}
+
 section button {
     background: rgb(255, 255, 255);
     border: 3px solid rgb(0, 0, 0);
