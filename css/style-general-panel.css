@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("/img/general-panel.jpg");
+}
+
+header {
+    background: radial-gradient(circle, rgba(42, 155, 51, 0.579) 50%, rgba(9,9,121,0.01) 100%);
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav button {
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: bold;
+    height: 30px;
+    margin: 10px 0px 20px 0px;
+    text-transform: uppercase;;
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
+}
+
+section div {
+  background: rgba(255, 255, 255, 0.689);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1px;
+  width:100%;
+  height: 70px;
+}
+
+section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section div p {
+    display: inline-block;
+    background:rgb(0, 0, 0);
+    border: 2px solid black;
+    color: white;
+}
+
+section div p em {
+    background: rgb(0, 0, 0);
+    color: rgb(234, 255, 0);
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+}
+
+.attention-div {
+    display: none;
+}
+
+section button {
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 25px;
+}
+
+ button:hover {
+    background: black;
+    color: white;
+}
+
+button:active {
+    background: white;
+    color: black;
+}
