@@ -2,6 +2,7 @@ import { addSlashToDate, displayData, clearFields } from "./fieldsMethods.js";
 import { convertDateToJS, convertDateToUI, sumDate, subDate, diffDate } from "./dateFunctions.js";
 import { Cow } from "./CowClass.js";
 
+
 ///////////////////////////   HTML TAGS   //////////////////////////// 
 
 const btnProcessData    = document.querySelector(".btn-process-data");
@@ -42,7 +43,7 @@ btnProcessData.addEventListener("click", (e)=>
     // HANDLE DATA
     const currentDate = new Date().toLocaleDateString();
     calvingPrognostic = convertDateToUI(sumDate(convertDateToJS(inseminationDate), 280));
-    cattleFeed = Number(milkMeasure) / 3; 
+    cattleFeed = (Number(milkMeasure) / 3).toFixed(2); 
     dol = diffDate(currentDate, convertDateToJS(calvingDate)); 
  
     // DISPLAY ON UI
@@ -62,11 +63,10 @@ btnSaveOnDatabase.addEventListener("click", (e)=>
 
     // CREATE COW OBJECT AND PUSH TO ARRAY
     const currentCowObj = new Cow(cowName, cowAge, calvingDate, inseminationDate, calvingPrognostic, milkMeasure, cattleFeed, dol);
- 
     dataCowsArray.push(currentCowObj);
     
     // SAVE ON LOCAL STORAGE
-    localStorage.setItem(JSON.stringify(dataCowsArray));
+    localStorage.setItem("cowDatabase", JSON.stringify(dataCowsArray));
 
     // CLEAR FIELDS
     clearFields();
@@ -76,8 +76,6 @@ btnSaveOnDatabase.addEventListener("click", (e)=>
 btnClearFields.addEventListener("click", (e)=> 
 {
     e.preventDefault();
-
-    // CLEAR FIELDS
     clearFields();
 }); 
 
@@ -87,13 +85,11 @@ btnClearFields.addEventListener("click", (e)=>
 document.querySelector(".calving-date-it").addEventListener("keydown", (e)=> {
     if(e.key !== "Backspace") {
         addSlashToDate();
-    }
-})
+    };
+});
 
 document.querySelector(".insemination-date-it").addEventListener("keydown", (e)=> {
     if(e.key != "Backspace") {
         addSlashToDate();
-    }
-})
-
-
+    };
+});

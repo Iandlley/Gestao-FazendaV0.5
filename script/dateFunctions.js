@@ -32,5 +32,5 @@ const diffDate = function(date1, date2)
     const toDateType2 = new Date(date2);
     const diffDate = toDateType1.getTime() - toDateType2.getTime();
     return diffDate / (1000 * 60 * 60 * 24);
-}
+};
 
