@@ -3,24 +3,23 @@
 export class Cow 
 { 
     constructor
-    (
-        id = "", 
+    ( 
         name = "", 
         age = "", 
         calvingDate = "", 
-        inseminationDate = "", 
+        inseminationDate = "",
+        calvingPrognostic = "", 
         milkMeasure = "",
-        dol = "",
-        calvingPrognostic = ""
-        
+        cattleFeed = "",
+        dol = "" 
     ){
-        this.id = id;
         this.name = name;
         this.age = age;
         this.calvingDate = calvingDate;
         this.inseminationDate = inseminationDate;
-        this.milkMeasure = milkMeasure;
-        this.dol = dol;
         this.calvingPrognostic = calvingPrognostic;
+        this.milkMeasure = milkMeasure;
+        this.cattleFeed = cattleFeed;
+        this.dol = dol;
     };  
 };

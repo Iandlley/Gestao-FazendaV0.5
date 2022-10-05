@@ -1,4 +1,4 @@
-export { addSlashToDate, displayData }
+export { addSlashToDate, displayData, clearFields }
 
 const addSlashToDate = function () 
 {
@@ -22,3 +22,11 @@ const displayData = function(data, id)
 };
 
 
+const clearFields = function()
+{
+    document.querySelector(".cow-name-it").value          = "";
+    document.querySelector(".cow-age-it").value           = "";
+    document.querySelector(".calving-date-it").value      = "";
+    document.querySelector(".insemination-date-it").value = "";
+    document.querySelector(".milk-measure-it").value      = "";
+}
