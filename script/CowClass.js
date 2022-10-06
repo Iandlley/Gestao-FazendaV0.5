@@ -11,7 +11,8 @@ export class Cow
         calvingPrognostic = "", 
         milkMeasure = "",
         cattleFeed = "",
-        dol = "" 
+        dol = "", 
+        lactationEndDate 
     ){
         this.name = name;
         this.age = age;
@@ -21,5 +22,6 @@ export class Cow
         this.milkMeasure = milkMeasure;
         this.cattleFeed = cattleFeed;
         this.dol = dol;
+        this.lactationEndDate = lactationEndDate;
     };  
 };

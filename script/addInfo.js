@@ -3,8 +3,6 @@ import { convertDateToJS, convertDateToUI, sumDate, subDate, diffDate } from "./
 import { Cow } from "./CowClass.js";
 
 
-
-
 ///////////////////////////   HTML TAGS   //////////////////////////// 
 
 const btnProcessData    = document.querySelector(".btn-process-data");
@@ -34,6 +32,7 @@ let calvingPrognostic;
 let milkMeasure;
 let cattleFeed;
 let dol;
+let lactationEndDate;
 
 ////////////////////////   EVENT HANDLERS   ///////////////////////// 
 
@@ -57,9 +56,15 @@ btnProcessData.addEventListener("click", (e)=>
 
     // HANDLE DATA
     const currentDate = new Date().toLocaleDateString();
+    
     calvingPrognostic = convertDateToUI(sumDate(convertDateToJS(inseminationDate), 280));
+    
     cattleFeed = (Number(milkMeasure) / 3).toFixed(2); 
+    
     dol = diffDate(currentDate, convertDateToJS(calvingDate)); 
+    
+    lactationEndDate = convertDateToUI(sumDate(convertDateToJS(inseminationDate), 220));
+    
  
     // DISPLAY ON UI
     displayData(cowName, ".cow-name");
@@ -92,7 +97,8 @@ btnSaveOnDatabase.addEventListener("click", (e)=>
         calvingPrognostic, 
         milkMeasure, 
         cattleFeed, 
-        dol
+        dol,
+        lactationEndDate
     );
     
     // SAVE ON LOCAL STORAGE
