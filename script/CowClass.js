@@ -12,7 +12,7 @@ export class Cow
         milkMeasure = "",
         cattleFeed = "",
         dol = "", 
-        lactationEndDate 
+        lactationEndDate
     ){
         this.name = name;
         this.age = age;

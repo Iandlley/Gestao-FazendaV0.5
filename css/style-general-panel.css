@@ -3,7 +3,7 @@
 }
 
 body {
-    background: url("./img/general-panel.jpg");
+    background: url("/img/general-panel.jpg");
 }
 
 header {
@@ -75,7 +75,16 @@ section {
     padding: 5px;
 }
 
- button:hover {
+button {
+    background:rgba(42, 155, 51, 0.833);
+    color: white;
+    border: 1px solid rgba(42, 155, 51, 0.833);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
     background: black;
     color: white;
 }
