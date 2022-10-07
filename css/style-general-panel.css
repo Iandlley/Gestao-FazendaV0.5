@@ -41,7 +41,7 @@ section {
 .cow-data {
     background-color:rgb(255, 255, 255);
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px; 
     font-weight: bold;
 }
@@ -81,6 +81,7 @@ button {
     border: 1px solid rgba(42, 155, 51, 0.833);
     border-radius: 5px;
     font-weight: bold;
+    padding: 5px;
     text-transform: uppercase;
 }
 

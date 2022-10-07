@@ -1,8 +1,10 @@
 "use strict";
 import { diffDate, convertDateToJS } from "./dateFunctions.js";
 
-// RETRIEVE DATA FROM LOCAL STORAGE
-let cowDataArray = JSON.parse(localStorage.getItem("cowDatabase"));
+///////////////////////////   HTML TAGS   ////////////////////////////
+
+const btnEdit = document.querySelector(".btn-edit");
+
 
 ////////////////////////////  FUNCTIONS  /////////////////////////////
 
@@ -25,7 +27,7 @@ function displayData(arrayObj)
                 endLactationAttention = "attention";
             } else {
                 endLactationAttention = "";
-            }
+            };
         }
         checkRequiredAttention(arrayObj);
         
@@ -41,7 +43,7 @@ function displayData(arrayObj)
             <p>D. INS:<span class="calving-prognostic">${arrayObj[i].inseminationDate}</span></p>
             <p>Prev. PARTO:<span class="calving-prognostic">${arrayObj[i].calvingPrognostic}</span></p>
             <p class="${endLactationAttention}">Fim LAC:<span class="end-lactation-date">${arrayObj[i].lactationEndDate}</span></p>
-            <button class="btn-edit">Editar</button>
+            <button class="btn-edit btn-edit${i}" onclick="alertar()">Editar</button>
         </span>`;
 
         document.querySelector(".span-section").innerHTML = html;
@@ -57,6 +59,7 @@ function changeObjectsSequence(arr)
 
     for(let i = 0; i < arr.length; i++)
     {
+        //CHECKING ATTENTION LEVEL
         if (arr[i].milkMeasure < 5)                     {count += 1};
         if (diffDate(arr[i].lactationEndDate, cd) < 10) {count += 1};
 
@@ -65,13 +68,32 @@ function changeObjectsSequence(arr)
         if (count == 0) {newArray.push(arr[i])};
 
         count = 0;
-    }
+    };
 
     return attentionAttArray.concat(newArray);
-}    
+};    
 
+const alertar = function()
+{
+    alert(1);
+};
 
-////////////////  EVENT HANDLERS AND FUNCTION CALLS   ////////////////
+/////////////////////////  FUNCTION CALLS   //////////////////////////
 
+// RETRIEVE DATA FROM LOCAL STORAGE
+const cowDataArray = JSON.parse(localStorage.getItem("cowDatabase"));
 let cowData = changeObjectsSequence(cowDataArray);
 displayData(cowData);
+
+
+/////////////////////////   EVENT HANDLERS   /////////////////////////
+
+// let allBtn = document.querySelectorAll(".btn-edit");
+// console.log(allBtn);
+
+//  document.querySelector(".btn-edit").addEventListener("click", function(e)
+//  {
+//     console.log(e);
+//  });
+
+
